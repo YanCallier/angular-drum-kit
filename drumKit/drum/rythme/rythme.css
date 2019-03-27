@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    align-items: center;
+}
+
+.player{
+    background-color:  darkgoldenrod;
+    margin-left: 30px;
+    padding: 10px;
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 700;
+    width: 150px;
+    border-radius:10px;
+    text-align: center;
+}
