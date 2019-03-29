@@ -1,14 +1,12 @@
-angular.module('rythme',[]);
-
 angular.
-module('rythme', [])
-.component('rythmeTest', {
+module('drumApp')
+.component('rythme', {
         templateUrl: 'drumKit/drum/rythme/rythme.html',
         bindings:{
             sounds: '<'
           },
         controller: function rythmeController($location) {
-            this.$onChanges= function (){
+            this.$onChanges = function (){
                 this.soundsTable =  this.sounds.split(',')
                 this.player = function (){
                     var count=0;

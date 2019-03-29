@@ -1,9 +1,12 @@
-<link rel="stylesheet" href="/drumKit/drum/drum.css"></style>
+<link rel="stylesheet" href="/drumKit/drum/drum.css">
 
-<div class="drum">
-    <key-list ng-repeat="(key, value) in $ctrl.keys" one-key="value"></key-list>
-</div>
+<key-liste keys-tab = "$ctrl.keys" keys-in = "AZI" alert-key-down="$ctrl.alertKeyDown" ></key-liste>
 
-<rythme-test sounds="$ctrl.state.sounds"></rythme-test>
+<key-liste keys-tab = "$ctrl.keys" keys-in = "ERTY" alert-key-down="$ctrl.alertKeyDown" ></key-liste>
 
-    
+<key-liste keys-tab = "$ctrl.keys" keys-in = "U" alert-key-down="$ctrl.alertKeyDown" ></key-liste>
+
+<key-liste keys-tab = "$ctrl.keys" keys-in = "II" alert-key-down="$ctrl.alertKeyDown" ></key-liste>
+
+
+<rythme sounds = "$ctrl.state.sounds"></rythme>

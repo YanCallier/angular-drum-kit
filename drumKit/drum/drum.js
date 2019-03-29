@@ -1,15 +1,10 @@
-angular.module('drum', ['key','rythme']);
-
 angular.
-  module('drum').
-  component('drumTest', {
+  module('drumApp').
+  component('drum', {
     templateUrl: 'drumKit/drum/drum.html',
-    controller: function drumController($timeout,$location) {
-      
-      this.state = {
-        keys:$location.hash(),
-        sounds:''
-      };
+    controller: function drumController($window,$location) {
+
+      var vm = this;
 
       this.keys = [
         {key:65, letter:'A', sound:'clap'},
@@ -17,8 +12,15 @@ angular.
         {key:69, letter:'E', sound:'kick'},
         {key:82, letter:'R', sound:'openhat'},
         {key:84, letter:'T', sound:'boom'},
-        {key:89, letter:'Y', sound:'ride'}
+        {key:89, letter:'Y', sound:'ride'},
+        {key:85, letter:'U', sound:'snare'},
+        {key:73, letter:'I', sound:'tom'},
       ]
+      
+      this.state = {
+        keys:$location.hash(),
+        sounds:''
+      };
 
       var splitState =  $location.hash().split('');
       for (i=0; splitState[i]; i++){
@@ -28,17 +30,10 @@ angular.
         }
       }
 
-      window.addEventListener('keydown', (e) => {
-        var selectKey = this.keys.filter(key => key.key === e.keyCode)[0];
-          if (selectKey){
-            var audio = new Audio('drumKit/sounds/' + selectKey.sound + '.wav');
-            audio.currentTime = 0;
-            audio.play();
-            document.getElementById(e.keyCode).classList.add('playing');
-            this.state.keys += selectKey.letter;
-            this.state.sounds += selectKey.sound + ', ';
-            document.location = "http://localhost:1234/#" + this.state.keys;
-          }
-      });
+      this.alertKeyDown = function (key) {
+        vm.state.keys += key.letter;
+        vm.state.sounds += key.sound + ', ';
+        $window.location.href = "http://localhost:1234/#" + vm.state.keys;
+      }
     }     
   })

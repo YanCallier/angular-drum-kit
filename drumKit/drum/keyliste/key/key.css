@@ -7,7 +7,6 @@ div {
 .key{
     border:1px solid black;
     border-radius:10%;
-    display: inline-block;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 700;
     transition:all 0.2s;

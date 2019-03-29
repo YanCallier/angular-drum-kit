@@ -1,1 +1,1 @@
-angular.module("drumApp",['drum']);
+angular.module("drumApp",[]);
